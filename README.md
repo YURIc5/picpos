@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# picpos DB設計
 
-Things you may want to cover:
+## postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|picture|string|null: false|
+|text|string|limit:254,null: false|
+### Association
+- has_many :comments
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|string|limit:254,null: false|
+|post_id|references|null: false, foreign_key: true|
+### Association
+- belongs_to :post
