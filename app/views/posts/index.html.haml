@@ -11,10 +11,4 @@
       .new-post-field__btn
         =form_tag "#",class: "post-btn" do
           post
-    .post-card
-      .post-time 11:00
-      .post-picture
-      .post-text
-        テキストです<br>
-        テキストです<br>
-        テキストです<br>
+    = render "post"
