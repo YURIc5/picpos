@@ -1,0 +1,11 @@
+.new-post-field
+  .new-post-field__picture
+    .new-post-field__picture--display
+      %p image
+    = link_to "#",class:"new-post-field__picture--choose" do
+      change
+  .new-post-field__text
+    %p comment
+  .new-post-field__btn
+    =form_tag "#",class: "post-btn" do
+      post
