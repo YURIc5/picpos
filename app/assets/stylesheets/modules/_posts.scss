@@ -22,22 +22,23 @@
   &__picture {
     height: 200px;
     &--display {
-      width:150px;
+      display: inline-block;
+      width: 150px;
       height: 150px;
       border: solid 1px $lightBlack;
       margin-top: 10px;
+      cursor: pointer;
+      .picture-file {
+        display: block;
+        color: $lightBlack;
+        text-align: center;
+        display: none;
+      }
     }
-    &--display p {
+    &--display pre {
       line-height: 150px;
       text-align: center;
-    }
-    &--choose {
-      display: block;
       color: $lightBlack;
-      text-align: center;
-    }
-    &--choose:hover {
-      text-decoration: underline;
     }
   }
   &__text {
@@ -47,11 +48,7 @@
     border-radius: 30px;
     margin-left: 40px;
   }
-  &__text p {
-    padding : 10px; 
-  }
   &__btn {
-    width: 100%;
     .post-btn {
       background-color: $mainBlue;
       color: $mainWhite;
@@ -62,8 +59,19 @@
       line-height: 40px;
       border-radius:40px;
       border: solid 1px $lightBlack;
+      cursor: pointer;
     }
   }
+}
+textarea {
+  outline: 0;
+  resize: none;
+  cursor: pointer;
+  padding: 10px;
+} 
+textarea::placeholder {
+  padding-top: 20px;
+  padding-left: 20px; 
 }
 
 // postcard
