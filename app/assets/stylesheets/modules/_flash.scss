@@ -1,0 +1,12 @@
+.notification {
+  .notice {
+    background-color: #6495ed;
+    color: $mainWhite;
+    text-align: center;
+  }
+  .error {
+    background-color: orange;
+    color: $mainWhite;
+    text-align: center;
+  }
+}

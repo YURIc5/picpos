@@ -9,8 +9,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
+        flash[:notice] = "投稿しました"
         redirect_to root_path
     else
+        flash[:error] = "投稿に失敗しました"
         render :index
     end
   end
