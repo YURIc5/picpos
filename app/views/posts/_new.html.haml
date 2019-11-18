@@ -1,11 +1,10 @@
-.new-post-field
+=form_for @post, html: {class:"new-post-field"} do |f| 
   .new-post-field__picture
-    .new-post-field__picture--display
-      %p image
-    = link_to "#",class:"new-post-field__picture--choose" do
-      change
-  .new-post-field__text
-    %p comment
+    = f.label :picture, class: "new-post-field__picture--display" do
+      %pre 
+        :preserve 
+          クリックしてファイルをUP
+      = f.file_field :picture, class:"picture-file"
+  = f.text_area :text, wrap: "hard", class:"new-post-field__text", placeholder: "comment"
   .new-post-field__btn
-    =form_tag "#",class: "post-btn" do
-      post
+    =f.submit "post",class: "post-btn" 
