@@ -21,24 +21,30 @@
   padding-top: 20px;
   &__picture {
     height: 200px;
-    &--display {
+    #img_field {
       display: inline-block;
       width: 150px;
       height: 150px;
       border: solid 1px $lightBlack;
       margin-top: 10px;
       cursor: pointer;
-      .picture-file {
-        display: block;
-        color: $lightBlack;
-        text-align: center;
-        display: none;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
       }
+
     }
-    &--display pre {
+    pre {
       line-height: 150px;
       text-align: center;
       color: $lightBlack;
+    }
+    .picture-file {
+      display: block;
+      color: $lightBlack;
+      text-align: center;
+      display: none;
     }
   }
   &__text {
