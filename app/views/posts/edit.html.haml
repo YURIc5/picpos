@@ -1,8 +1,8 @@
 .wrapper
   .contents
-    =form_for @post, html: {class:"new-post-field"} do |f| 
+    =form_for @post, html: {class:"post-field"} do |f| 
       = render 'layouts/error_messages', model: f.object 
-      .new-post-field__picture
+      .post-field__picture
         = f.label :picture do
           #img_field
             -if @post.picture.nil?
@@ -12,6 +12,6 @@
             - else
               = image_tag "#{@post.picture.url}"
           = f.file_field :picture, class:"picture-file"
-      = f.text_area :text, wrap: "hard", class:"new-post-field__text", placeholder: "comment"
-      .new-post-field__btn
+      = f.text_area :text, wrap: "hard", class:"post-field__text", placeholder: "comment"
+      .post-field__btn
         =f.submit "post",class: "post-btn" 
