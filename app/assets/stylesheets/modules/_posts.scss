@@ -11,13 +11,6 @@
 }
 
 // 新規post
-
-img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
 .new-post-field {
   display: flex;
   flex-wrap: wrap;
@@ -35,6 +28,11 @@ img {
       border: solid 1px $lightBlack;
       margin-top: 10px;
       cursor: pointer;
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
 
     }
     pre {
@@ -83,13 +81,6 @@ textarea::placeholder {
 }
 
 // postcard
-.post-date {
-  width: 100%;
-  height: 30px;
-  line-height: 30px;
-  background-color: $lightGray;
-  text-align: center;
-}
 .post-card {
   display: flex;
   background-color: $mainWhite;
@@ -102,17 +93,10 @@ textarea::placeholder {
   text-align: center;
   align-self: center;
 }
-.post-picture-area {
-  flex: 0 0 25%;
-  margin: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .post-picture {
-  width: 150px;
-  height: 150px;
+  flex: 0 0 25%;
   border: solid 1px $lightBlack;
+  margin: 5px;
 }
 .post-text {
   flex: 0 0 65%;
