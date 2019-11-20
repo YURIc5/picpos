@@ -6,3 +6,6 @@ ja:
       post:
         picture: 画像
         text: コメント
+  time:
+    formats:
+      default: ! '%H:%M'

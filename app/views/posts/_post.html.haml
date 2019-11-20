@@ -1,7 +1,8 @@
 .post-card
-  .post-time 11:00
-  .post-picture
+  .post-time 
+    = l(post.created_at,format: :default)
+  .post-picture-area
+    .post-picture
+      = image_tag "#{post.picture.url}"
   .post-text
-    テキストです<br>
-    テキストです<br>
-    テキストです<br>
+    = simple_format post.text
