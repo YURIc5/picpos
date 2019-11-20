@@ -1,7 +1,19 @@
+-# .post-date
+-#   = post.created_at.strftime('%Y/%m/%d')
+-# .post-card
+-#   .post-time 
+-#     = l(post.created_at,format: :default)
+-#   .post-picture-area
+-#     .post-picture
+-#       = image_tag "#{post.picture.url}"
+-#   .post-text
+-#     = simple_format post.text
+
 .post-card
-  .post-time 11:00
-  .post-picture
+  .post-time 
+    = l(post.created_at,format: :default)
+  .post-picture-area
+    .post-picture
+      = image_tag "#{post.picture.url}"
   .post-text
-    テキストです<br>
-    テキストです<br>
-    テキストです<br>
+    = simple_format post.text
