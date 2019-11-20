@@ -1,5 +1,6 @@
 .wrapper {
   background-color: $lightGray;
+  padding-bottom: 50px;
 }
 .contents {
   color: $lightBlack;
@@ -10,14 +11,14 @@
   padding-bottom: 50px;
 }
 
-// 新規post
+// post
 img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.new-post-field {
+.post-field {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -94,6 +95,7 @@ textarea::placeholder {
   width: 100%;
   min-height: 180px;
   margin-top: 5px;
+  position: relative;
 }
 .post-time {
   flex: 0 0 10%;
@@ -113,6 +115,49 @@ textarea::placeholder {
   border: solid 1px $lightBlack;
 }
 .post-text {
-  flex: 0 0 65%;
-  padding: 5px;
+  flex: 0 0 55%;
+  padding: 10px;
+}
+
+// 編集・削除
+.more {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1;
+  height: 100px;
+  width: 80px;
+  text-align: right;
+  color: $lightBlack;
+  cursor: pointer;
+  &:hover ul.more_list {
+    display: block;
+  }
+  ul.more_list {
+    position: absolute;
+    text-align: left;
+    width: 80px;
+    right: 0;
+    font-size: 12px;
+    background-color: #fff;
+    border: solid 1px $lightGray;
+    display: none;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    border-radius: 3px;
+    li {
+      border-bottom: solid 1px $lightGray;
+      &:last-child {
+        border-bottom: 0;
+      }
+      a {
+        display: block;
+        padding: 5px;
+        color: $lightBlack;
+        &:hover {
+          background-color: #6495ed;
+          color: #fff;
+        }
+      }
+    }
+  }
 }

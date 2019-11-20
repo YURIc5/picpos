@@ -1,4 +1,14 @@
 .post-card
+  .more
+    %span
+      = fa_icon "ellipsis-h"
+    %ul.more_list
+      %li
+        = link_to '詳細', "/posts/#{post.id}", method: :get
+      %li
+        = link_to '編集', "/posts/#{post.id}/edit", method: :get
+      %li
+        = link_to '削除', "/posts/#{post.id}", method: :delete
   .post-time 
     = l(post.created_at,format: :default)
   .post-picture-area
