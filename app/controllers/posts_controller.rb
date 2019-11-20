@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @post = Post.new
+    @posts = Post.order("created_at DESC").group_by{|e| e.created_at.strftime('%Y/%m/%d') }
   end
 
   def new
