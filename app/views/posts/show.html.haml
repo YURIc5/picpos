@@ -19,7 +19,7 @@
 
     = form_for [@post,@comment], html: {class:"comment-field"} do |f| 
       = render 'layouts/error_messages', model: f.object
-      = f.text_area :text, wrap: "hard", class:"comment-field__text", placeholder: "commentする"
+      = f.text_area :text, wrap: "hard", class:"comment-field__text", placeholder: "commentする",required: :true
       = f.submit "comment",class: "comment-field__btn" 
     
     .comments
