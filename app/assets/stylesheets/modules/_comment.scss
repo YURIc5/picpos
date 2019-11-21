@@ -1,0 +1,30 @@
+.comment-field {
+  background-color: $mainWhite;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &__text {
+    width:80%;
+    height: 200px;
+    margin: 0 auto;
+    margin-top: 20px;
+    // margin-left: auto;
+    // margin-right: auto;
+    border: solid 1px $lightBlack;
+    border-radius: 30px;
+  }
+  &__btn {
+    background-color: $mainBlue;
+    color: $mainWhite;
+    width: 200px;
+    height: 40px;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 40px;
+    border-radius:40px;
+    border: solid 1px $lightBlack;
+    cursor: pointer;
+  }
+}
