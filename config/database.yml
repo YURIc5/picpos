@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: picpos_production
-  username: picpos
-  password: <%= ENV['PICPOS_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
