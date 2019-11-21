@@ -22,3 +22,12 @@
       = f.text_area :text, wrap: "hard", class:"comment-field__text", placeholder: "commentする"
       = f.submit "comment",class: "comment-field__btn" 
     
+    .comments
+      %h2 comment list
+      - @comments.each do |comment|
+        .comment-list
+          .datetime
+            = l(comment.created_at, format: :short)
+          %ul
+            %li
+              =simple_format comment.text
