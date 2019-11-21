@@ -16,3 +16,18 @@
           = image_tag "#{@post.picture.url}"
       .post-text
         = simple_format @post.text
+
+    = form_for [@post,@comment], html: {class:"comment-field"} do |f| 
+      = render 'layouts/error_messages', model: f.object
+      = f.text_area :text, wrap: "hard", class:"comment-field__text", placeholder: "commentする",required: :true
+      = f.submit "comment",class: "comment-field__btn" 
+    
+    .comments
+      %h2 comment list
+      - @comments.each do |comment|
+        .comment-list
+          .datetime
+            = l(comment.created_at, format: :short)
+          %ul
+            %li
+              =simple_format comment.text

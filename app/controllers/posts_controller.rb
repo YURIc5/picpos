@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
+  before_action :set_posts
   def index
     @post = Post.new
-    @posts = Post.order("created_at DESC").group_by{|e| e.created_at.strftime('%Y/%m/%d') }
   end
 
   def new
@@ -38,6 +38,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
+  end
+
+  def set_posts
+    @posts = Post.order("created_at DESC").group_by{|e| e.created_at.strftime('%Y/%m/%d') }
   end
 
   private
