@@ -1,0 +1,17 @@
+.wrapper
+  .contents
+    =form_for @post, html: {class:"post-field"} do |f| 
+      = render 'layouts/error_messages', model: f.object 
+      .post-field__picture
+        = f.label :picture do
+          #img_field
+            -if @post.picture.nil?
+              %pre 
+                :preserve 
+                  クリックしてファイルをUP
+            - else
+              = image_tag "#{@post.picture.url}"
+          = f.file_field :picture, class:"picture-file"
+      = f.text_area :text, wrap: "hard", class:"post-field__text", placeholder: "comment"
+      .post-field__btn
+        =f.submit "post",class: "post-btn" 

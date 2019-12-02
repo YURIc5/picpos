@@ -1,4 +1,6 @@
 .notification {
+  z-index: 10;
+  padding-top: 50px;
   .notice {
     background-color: #6495ed;
     color: $mainWhite;

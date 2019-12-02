@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_posts
   def index
     @post = Post.new
   end
@@ -15,6 +16,34 @@ class PostsController < ApplicationController
         flash[:error] = "投稿に失敗しました"
         render :index
     end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    flash[:notice] = "削除しました"
+    redirect_to root_path
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(post_params) 
+    flash[:notice] = "変更しました"
+    redirect_to root_path
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.order("created_at DESC")
+  end
+
+  def set_posts
+    @posts = Post.order("created_at DESC").group_by{|e| e.created_at.strftime('%Y/%m/%d') }
   end
 
   private

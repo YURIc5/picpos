@@ -6,3 +6,12 @@ ja:
       post:
         picture: 画像
         text: コメント
+  date:
+    formats:
+      default: '%Y/%m/%d'
+      long: '%Y年%m月%d日'
+      short: '%m/%d'
+      
+  time:
+    formats:
+      default: ! '%H:%M'
