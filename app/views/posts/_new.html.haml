@@ -7,6 +7,6 @@
           :preserve 
             クリックしてファイルをUP
       = f.file_field :picture, class:"picture-file"
-  = f.text_area :text, wrap: "hard", class:"post-field__text", placeholder: "comment"
+  = f.text_area :text, wrap: "hard", class:"post-field__text", placeholder: "comment",required: :true
   .post-field__btn
     =f.submit "post",class: "post-btn" 
