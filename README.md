@@ -1,5 +1,30 @@
 # README
 
+## WEBサービス名
+ 
+PICPOS　
+　画像投稿サービス（簡易版）
+
+## 概要
+ 
+- URL: http://3.114.3.46/
+
+ 
+## 使用した技術と機能一覧
+ 
+- フロント
+  - haml/Sass/JavaSqript/jQuery
+
+- サーバーサイド
+  - 写真とテキストの投稿・編集・削除
+  - 投稿に対するコメント機能
+  - 投稿機能の単体テスト(Rspec)
+
+- インフラ
+  - EC2（AWS)
+  - Mysql
+  - S3（AWS）
+
 # picpos DB設計
 
 ## postsテーブル
