@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   mount_uploader :picture, PictureUploader
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
   validates :picture, presence: true
   validates :text, presence: true,
